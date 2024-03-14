@@ -43,7 +43,7 @@ function getRnadomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
 // funzione per controllare se è un numero pari o dispari
-function pOd() {
+function evenOrOdd() {
     // controllo la parità
     if(sum % 2 === 0){
         return('pari')
@@ -67,13 +67,13 @@ if(numUser > 5 || numUser < 1){
     // controllo i dati inseriti dall'utente e verifico chi ha vinto
     if(pOdUser === 'pari'){
         // controllo se l'utente ha scelto pari e controllo la vittoria
-        if(pOd(sum) === 'pari'){
+        if(evenOrOdd(sum) === 'pari'){
             console.log(`HAI VINTO! La somma dei numeri era: ${sum} (pari)`)
         } else {
             console.log(`HAI PERSO! La somma dei numeri era: ${sum} (dispari)`)
         }
     } else if(pOdUser === 'dispari'){
-        if(pOd(sum) === 'dispari'){
+        if(evenOrOdd(sum) === 'dispari'){
             console.log(`HAI VINTO! La somma dei numeri era: ${sum} (dispari)`);
         } else {
             console.log(`HAI PERSO! La somma dei numeri era: ${sum} (pari)`);
