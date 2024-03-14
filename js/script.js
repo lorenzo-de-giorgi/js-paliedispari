@@ -10,6 +10,18 @@ function palindroma() {
     let parolaArray = []
     // divido le lettere
     let parolaDivisa = parola.split('');
+    console.log(parolaDivisa)
     // giro la parola
-    let palindromaCheck = parolaDivisa.reverse();
+    let parolaInvertita = parolaDivisa.reverse();
+    console.log(parolaInvertita)
+    // ri-unisco le lettere
+    let palindromaCheck = parolaInvertita.join('');
+    // controllo se le due parole sono ugali
+    if(parola == palindromaCheck){
+        console.log('La parola è palindroma')
+    } else {
+        console.log('La parola NON è palindroma')
+    }
 }
+
+console.log(palindroma(parola))
