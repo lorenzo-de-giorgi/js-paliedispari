@@ -39,7 +39,7 @@ let pOdUser = prompt('Scegli pari o dispari');
 // input numero
 let numUser = parseInt(prompt('Scegli un numero tra 1 e 5'));
 // funzione per numeri random
-function getRnadomNumber(min, max) {
+function getRanadomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
 // funzione per controllare se è un numero pari o dispari
@@ -60,7 +60,7 @@ if(numUser > 5 || numUser < 1){
     //stampo il numero dell'utente
     console.log(numUser);
     // genero e stampo il numero casuale per il computer
-    let numComputer = getRnadomNumber(1, 5);
+    let numComputer = getRanadomNumber(1, 5);
     console.log(numComputer)
     // definisco la somma dei due numeri
     let sum = numUser + numComputer;
