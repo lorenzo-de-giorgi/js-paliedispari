@@ -61,6 +61,8 @@ function pOd() {
 // controllo che il numero non sia superiore a 5 ed inferiore a 1 e 5
 if(numUser > 5 || numUser < 1){
     console.log('ERRORE!! Inserisci un numero compreso tra 1 e 5')
+} else if(evenOddUser !== 'pari' || evenOddUser !== 'dispari'){
+    console.log('ERRORE!! Assicurati di scegliere PARI o Dispari!')
 } else {
     // controllo i dati inseriti dall'utente e verifico chi ha vinto
     if(evenOddUser === 'pari'){
