@@ -24,7 +24,6 @@ function palindroma() {
         console.log('La parola NON è palindroma')
     }
 }
-
 console.log(palindroma(parola))
 
 /*
@@ -36,6 +35,48 @@ console.log(palindroma(parola))
 */
 
 // input pari o dispari
-let pOd = prompt('Scegli pari o dispari');
+let pOdUser = prompt('Scegli pari o dispari');
 // input numero
-let num = parseInt(prompt('Scegli un numero tra uno e 5'));
+let numUser = parseInt(prompt('Scegli un numero tra 1 e 5'));
+// funzione per numeri random
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
+// funzione per controllare se è un numero pari o dispari
+function pOd() {
+    // controllo la parità
+    if(sum % 2 === 0){
+        return('pari')
+    } else {
+        return('dispari')
+    }
+};
+// controllo che il numero non sia superiore a 5 ed inferiore a 1 e 5
+if(numUser > 5 || numUser < 1){
+    console.log('ERRORE!! Inserisci un numero compreso tra 1 e 5')
+} else if(pOdUser !== 'pari' || pOdUser !== 'dispari'){
+    console.log('ERRORE!! Assicurati di scegliere PARI o Dispari!')
+} else {
+    //stampo il numero dell'utente
+    console.log(numUser);
+    // genero e stampo il numero casuale per il computer
+    let numComputer = getRndInteger(1, 5);
+    console.log(numComputer)
+    // definisco la somma dei due numeri
+    let sum = numUser + numComputer;
+    // controllo i dati inseriti dall'utente e verifico chi ha vinto
+    if(pOdUser === 'pari'){
+        // controllo se l'utente ha scelto pari e controllo la vittoria
+        if(pOd(sum) === 'pari'){
+            console.log(`HAI VINTO! La somma dei numeri era: ${sum} (pari)`)
+        } else {
+            console.log(`HAI PERSO! La somma dei numeri era: ${sum} (dispari)`)
+        }
+    } else if(pOdUser === 'dispari'){
+        if(pOd(sum) === 'dispari'){
+            console.log(`HAI VINTO! La somma dei numeri era: ${sum} (dispari)`);
+        } else {
+            console.log(`HAI PERSO! La somma dei numeri era: ${sum} (pari)`);
+        }
+    }
+}
